@@ -23,6 +23,23 @@ defmodule Cards do
     Enum.shuffle(deck)
   end
 
+  @doc """
+  Divides a deck into a hand and the reminder of the deck.
+  The `hand_size` argument indicates how many cards should be in the hand.
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+      "Five of Spades", "Ace of Clubs", "Two of Clubs", "Three of Clubs",
+      "Four of Clubs", "Five of Clubs", "Ace of Hearts", "Two of Hearts",
+      "Three of Hearts", "Four of Hearts", "Five of Hearts", "Ace of Diamonds",
+      "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
+      iex> {hand, deck} = Cards.deal(deck, 1)
+      iex> hand
+      ["Ace of Spades"]
+
+  """
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
